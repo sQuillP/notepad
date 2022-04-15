@@ -1,0 +1,39 @@
+<div #overlayRef (click)="onDismissOverlay($event)" class="overlay" *ngIf="editTitle">
+    <div class="edit-name-container">
+        <label for="changename">Enter the new file name</label>
+        <input type="text" id="changename" autofocus [(ngModel)]="notebookTitle">
+        <button #overlayBtn class="rename-btn">OK</button>
+    </div>
+</div>
+<div class="document-container">
+    <div class="options-bar" *ngIf="currentNotebook">
+        <div class="option-wrapper">
+            <div class="options-item" (click)="onEditNotebookName()">
+                <i class="fa-solid fa-marker"></i>
+                <p class="small-text">Rename</p>
+            </div>
+            <div class="options-item" (click)="onSaveNotebook()">
+                    <i class="fa-solid fa-floppy-disk"></i>
+                    <p class="small-text">Save</p>
+            </div>
+            <div class="options-item" (click)="onDeleteNotebook()">
+                <i class="fa-solid fa-xmark"></i>
+                <p class="small-text">Delete</p>
+            </div>
+        </div>
+    </div>
+    <div class="notepad-wrapper">
+        <textarea *ngIf="!!currentNotebook; else displayEmpty" placeholder="Begin creating your notes..." name="" id="" class="notepad" [(ngModel)]="content">
+        </textarea>
+        <ng-template #displayEmpty>
+            <div class="empty-notes">
+                <div class="empty-notes-header">
+                    <h1>Create a new document to start writing!</h1>
+                </div>
+                <div class="empty-notes-img-wrapper">
+                    <img src="https://www.pngkit.com/png/detail/76-768652_adaptive-assessments-icon-pen-and-paper.png" alt="">
+                </div>
+            </div>
+        </ng-template>
+    </div>
+</div>

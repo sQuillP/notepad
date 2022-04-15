@@ -1,0 +1,35 @@
+<div class="sidebar-wrapper">
+    <div class="icon-toggle" (click)="onToggleSidebar()">
+        <i class="fa-solid fa-bars"></i>
+    </div>
+    <div class="options-container" [ngClass]="toggleSidebar?'show':''">
+        <div class="options-label">
+            <h3>Documents</h3>
+        </div>
+        <div class="new-doc" #addNote (click)="onCreateNewNotebook()">
+            <p class="letterspace">Create New Document</p>
+            <i class="fa-solid fa-plus"></i>
+        </div>
+        <div class="document-item" 
+        *ngFor="let notebook of notebooks; let i = index"
+        (click)="onSetNotebook(i)"
+        [ngStyle]="{background: selectedNotebookIndex === i? '#283374':''}"
+        >
+            <div class="doc-title">
+                <h3 *ngIf="!newlyCreatedNotebook||i!==selectedNotebookIndex">{{notebook.title}}</h3>
+                <input 
+                #notebookInputRef 
+                [(ngModel)]="notebookName" 
+                autofocus
+                type="text" 
+                class="doc-input"
+                *ngIf="newlyCreatedNotebook&&i===selectedNotebookIndex"
+                placeholder="Enter a title..."
+                >
+            </div>
+            <div class="doc-info">
+                <p>Created on: {{notebook.dateCreated.toLocaleDateString()}}</p>
+            </div>
+        </div>
+    </div>
+</div>

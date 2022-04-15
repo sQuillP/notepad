@@ -1,0 +1,148 @@
+
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&family=Poppins:wght@100;200&display=swap');
+
+.document-container{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.overlay{
+    position: absolute;
+    background: rgba(0,0,0, 0.7);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;;
+    z-index: 4;
+    font-weight: bold;
+}
+
+.overlay *{
+    margin: 10px 0;
+}
+
+.edit-name-container{
+    background: #eee;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 50vh !important;
+    border-radius: 10px;
+}
+
+.rename-btn{
+    border: none;
+    padding: 10px 20px;
+    background: #4285F4;
+    color: white;
+    border-radius: 10px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 100ms linear;
+}
+
+.rename-btn:hover{
+    background-color: #2374f5;
+}
+
+#changename{
+    padding: 10px;
+    border: none;
+    outline: none;;
+}
+
+.options-bar{
+    background: #4285F4;
+    /* display: flex; */
+    margin: 0;
+    padding: 0;
+}
+
+.option-wrapper{
+    display: flex;;
+    margin-left: 175px;
+}
+
+.options-item{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 75px;
+    padding: 10px;    
+    color: whitesmoke;
+    
+}
+
+.options-item *{
+    margin: 0;
+    padding: 0;
+}
+
+.options-item:hover i{
+    transform: scale(1.3);
+}
+
+i{
+    font-size: 1.5em;
+    transition: transform 200ms linear;
+}
+
+.options-item p{
+    margin-top: 5px;
+}
+
+.notepad-wrapper{
+  height: 100%;
+  width: 100%;
+  margin: 0;;
+  /* box-sizing: border-box; */
+}
+
+.notepad{
+    width: 100%;
+    height: 92vh;
+    margin: 0;
+    border: none;
+    font-size: 1.3em;
+    outline: none;
+    box-sizing: border-box;
+    resize: none;
+    padding: 50px 50px 0 180px;
+    font-family: 'PT Sans', sans-serif;
+    
+}
+
+
+.empty-notes {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    ;
+}
+
+.empty-notes-img-wrapper{
+    height: 300px;
+    width: 300px;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+
+.empty-notes-img-wrapper img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;;
+    box-shadow: 0 0 8px 8px white inset;
+}
+
+
